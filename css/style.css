@@ -1,0 +1,111 @@
+/* ===== 全体の設定 ===== */
+:root {
+  --text: #111;
+  --sub: #777;
+  --line: #ddd;
+  --bg: #fff;
+  --placeholder: #eee;
+  --max: 1100px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { opacity: 0.6; }
+
+.inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+/* ===== ヘッダー ===== */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+.site-header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.logo { font-size: 20px; font-weight: bold; }
+.nav { display: flex; gap: 24px; list-style: none; font-size: 14px; }
+
+/* ===== メインビジュアル（あとで画像に差し替え） ===== */
+.key-visual {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--placeholder);
+  margin: 48px 0 32px;
+}
+.key-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.exhibition-title { font-size: 28px; font-weight: bold; }
+.exhibition-date { color: var(--sub); margin-bottom: 24px; }
+
+/* ===== 各セクション ===== */
+.section { padding: 64px 0; border-top: 1px solid var(--line); }
+.section h2 { font-size: 16px; font-weight: bold; margin-bottom: 24px; }
+
+/* ===== メンバー一覧（15人分） ===== */
+.members {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 32px 24px;
+  list-style: none;
+}
+.member .thumb {
+  aspect-ratio: 1 / 1;
+  background: var(--placeholder);
+  margin-bottom: 8px;
+}
+.member .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.member .name { font-size: 14px; }
+
+/* ===== 展覧会情報 ===== */
+.info { display: grid; grid-template-columns: 120px 1fr; gap: 12px 24px; }
+.info dt { color: var(--sub); }
+
+/* ===== メンバー個別ページ ===== */
+.member-page h1 { font-size: 24px; margin: 48px 0 8px; }
+.member-page .lead { color: var(--sub); margin-bottom: 32px; }
+
+/* 作品（PDF・Webサイト）を差し込む枠 */
+.work-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--placeholder);
+  margin-bottom: 48px;
+}
+.work-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 0 64px;
+  border-top: 1px solid var(--line);
+}
+
+/* ===== フッター ===== */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0;
+  font-size: 12px;
+  color: var(--sub);
+}
+
+/* ===== スマホ表示 ===== */
+@media (max-width: 600px) {
+  .nav { gap: 16px; }
+  .exhibition-title { font-size: 22px; }
+  .members { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
+  .info { grid-template-columns: 1fr; gap: 0; }
+  .info dd { margin-bottom: 12px; }
+}
