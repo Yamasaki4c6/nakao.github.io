@@ -23,7 +23,7 @@ html, body { background: var(--bg); }
 
 /* 各展示 */
 .ex { cursor: pointer; }
-.ex .hit { fill: transparent; pointer-events: all; }
+.ex .hit { fill: #fff; fill-opacity: 0; pointer-events: all; }
 .ex-in {
   transform-box: fill-box;
   transform-origin: center;
