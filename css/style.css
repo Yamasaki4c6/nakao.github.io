@@ -1,86 +1,89 @@
-/* ===== 全体の設定 ===== */
+/* ===== 全体 ===== */
 :root {
-  --text: #111;
-  --sub: #777;
-  --line: #ddd;
+  --text: #231815;
+  --sub: #6b6461;
+  --line: #d9d6d4;
   --bg: #fff;
-  --placeholder: #eee;
-  --max: 1100px;
+  --hover: rgba(35, 24, 21, 0.07);
+  --placeholder: #f2f1f0;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Noto Sans JP", sans-serif;
-  line-height: 1.9;
-  letter-spacing: 0.04em;
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
 }
 
 a { color: inherit; text-decoration: none; }
-a { transition: opacity .2s; }
-a:hover { opacity: 0.6; }
-.member .thumb { transition: transform .3s; }
-.member a:hover .thumb { transform: scale(1.02); }
+img { display: block; max-width: 100%; height: auto; }
 
-.inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-
-/* ===== ヘッダー ===== */
-.site-header {
-  border-bottom: 1px solid var(--line);
-  padding: 20px 0;
+/* ===== ポスター（トップ） ===== */
+.poster {
+  position: relative;
+  width: min(100% - 32px, 900px);
+  margin: 32px auto 0;
 }
-.site-header .inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+.poster img { width: 100%; }
+
+/* 各展覧会のクリック範囲 */
+.spot {
+  position: absolute;
+  transition: background-color .2s;
 }
-.logo { font-size: 20px; font-weight: bold; }
-.nav { display: flex; gap: 24px; list-style: none; font-size: 14px; }
+.spot:hover, .spot:focus-visible { background: var(--hover); outline: none; }
 
-/* ===== メインビジュアル（あとで画像に差し替え） ===== */
-.key-visual {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: var(--placeholder);
-  margin: 48px 0 32px;
+/* ===== ロゴ・ステートメント ===== */
+.intro {
+  width: min(100% - 32px, 900px);
+  margin: 96px auto 64px;
+  text-align: center;
 }
-.key-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.intro h1 { font-weight: 400; margin-bottom: 24px; }
+.logo-img { width: 280px; margin: 0 auto; }
+.intro .sub { display: block; font-size: 14px; letter-spacing: 1em; margin-top: 8px; padding-left: 1em; }
+.intro .statement { margin-top: 24px; font-size: 14px; color: var(--sub); }
 
-.exhibition-title { font-size: 28px; font-weight: bold; }
-.exhibition-date { color: var(--sub); margin-bottom: 24px; }
-
-/* ===== 各セクション ===== */
-.section { padding: 64px 0; border-top: 1px solid var(--line); }
-.section h2 { font-size: 16px; font-weight: bold; margin-bottom: 24px; }
-
-/* ===== メンバー一覧（15人分） ===== */
-.members {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 32px 24px;
+/* ===== 15の展覧会一覧 ===== */
+.list {
   list-style: none;
+  width: min(100% - 32px, 900px);
+  margin: 0 auto 96px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  border-top: 1px solid var(--line);
 }
-.member .thumb {
-  aspect-ratio: 1 / 1;
-  background: var(--placeholder);
-  margin-bottom: 8px;
+.list li { border-bottom: 1px solid var(--line); }
+.list a {
+  display: block;
+  height: 100%;
+  padding: 20px 12px;
+  transition: background-color .2s;
 }
-.member .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.member .name { font-size: 14px; }
+.list a:hover { background: var(--hover); }
+.who { font-size: 20px; font-weight: 500; }
+.what { font-size: 18px; margin-bottom: 8px; }
+.when { font-size: 13px; color: var(--sub); }
 
-/* ===== 展覧会情報 ===== */
-.info { display: grid; grid-template-columns: 120px 1fr; gap: 12px 24px; }
-.info dt { color: var(--sub); }
+/* ===== 個別ページ ===== */
+.site-header {
+  width: min(100% - 32px, 1100px);
+  margin: 0 auto;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.site-header .logo-img { width: 160px; margin: 0; }
 
-/* ===== メンバー個別ページ ===== */
-.member-page h1 { font-size: 24px; margin: 48px 0 8px; }
-.member-page .lead { color: var(--sub); margin-bottom: 32px; }
+.member-page { width: min(100% - 32px, 1100px); margin: 0 auto; }
+.caption { padding: 48px 0 32px; }
+.caption .who { font-size: 32px; }
+.caption .what { font-size: 26px; }
+.caption .when { font-size: 15px; }
 
 /* 作品（PDF・Webサイト）を差し込む枠 */
 .work-frame {
@@ -94,23 +97,25 @@ a:hover { opacity: 0.6; }
 .pager {
   display: flex;
   justify-content: space-between;
-  padding: 32px 0 64px;
+  padding: 24px 0 64px;
   border-top: 1px solid var(--line);
+  font-size: 24px;
 }
+.pager a:hover { opacity: .5; }
 
 /* ===== フッター ===== */
 .site-footer {
   border-top: 1px solid var(--line);
-  padding: 32px 0;
+  padding: 32px 16px;
   font-size: 12px;
   color: var(--sub);
+  text-align: center;
 }
 
-/* ===== スマホ表示 ===== */
 @media (max-width: 600px) {
-  .nav { gap: 16px; }
-  .exhibition-title { font-size: 22px; }
-  .members { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
-  .info { grid-template-columns: 1fr; gap: 0; }
-  .info dd { margin-bottom: 12px; }
+  .poster { margin-top: 16px; }
+  .intro { margin: 64px auto 48px; }
+  .logo-img { width: 220px; }
+  .caption .who { font-size: 24px; }
+  .caption .what { font-size: 20px; }
 }
