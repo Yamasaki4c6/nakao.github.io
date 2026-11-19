@@ -77,3 +77,16 @@ html, body { background: var(--bg); }
   .list .what { font-size: 16px; margin-bottom: 6px; }
   .list .when { font-size: 12px; color: #6b6461; }
 }
+
+/* ===== PC用：ページ下部の表記 ===== */
+.pc-footer {
+  padding: 0 16px 48px;
+  text-align: center;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: #2c292a;
+}
+@media (max-width: 700px) {
+  .pc-only { display: none; }
+}
