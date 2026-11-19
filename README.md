@@ -2,7 +2,7 @@
 
 GitHub Pages: https://yamasaki4c6.github.io/nakao.github.io/
 
-- `index.html` … トップ。ポスター（`images/poster.svg`）の各展覧会部分がクリックでき、下に15の展覧会の一覧
-- `members/01.html`〜`15.html` … 展覧会ごとのページ。`.work-frame` に PDF / Webサイトを iframe で差し込む
-- `css/style.css` … デザイン
-- `images/` … ポスター、ロゴ
+- `index.html` … ポスターをそのまま再現したトップページ。各展示をタップすると `pdf/` のPDFが開く
+- `pdf/` … 展示ごとのPDF（対応表は `pdf/README.md`）
+- `images/qr.png` … QRコード（差し替え可）
+- `css/style.css` … 表示とホバー効果
