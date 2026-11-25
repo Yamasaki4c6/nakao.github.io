@@ -15,8 +15,8 @@ html, body { background: var(--bg); }
 }
 .poster-svg {
   display: block;
-  width: min(100%, (100vh - 32px) * 0.70714);
-  width: min(100%, (100dvh - 32px) * 0.70714);
+  width: min(100%, (100vh - 32px) * 0.71127);
+  width: min(100%, (100dvh - 32px) * 0.71127);
   height: auto;
   overflow: visible;
 }
