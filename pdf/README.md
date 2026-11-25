@@ -7,7 +7,7 @@
 | 01.pdf | 遠藤蒼馬「Mobie Space」 |
 | 02.pdf | 山本拓翔「思考」 |
 | 03.pdf | チョウシセン「温かい尿が、炎症を起こした尿道口から流れ出る。」 |
-| 04.pdf | 山崎煌世「スコア（2026/11/23 – 2026/12/31）」 ※未着 |
+| （リンク） | 山崎煌世「スコア（2026/11/23 – 2026/12/31）」 → https://yamasaki4c6.github.io/Project_STARGAZER.github.io/ |
 | 05.pdf | 前田明人「data salad」 |
 | 06.pdf | 大川智章「rediscovery」 |
 | 07.pdf | 赤木ミライ「リンの為の更衣室」 |
